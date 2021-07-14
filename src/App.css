@@ -1,0 +1,14 @@
+* {
+  background-color: #393943;
+  color: #fff;
+}
+
+#app {
+  display: flex
+}
+
+#sidebar {
+  width: 350px;
+  height: 100vh;
+  background-color: #363640;
+}
