@@ -1,6 +1,6 @@
 import "./index.css"
 
-function MainList() {
+function CovidTable() {
   return (
     <div>
       <table id="data-table">
@@ -37,4 +37,4 @@ function MainList() {
   )
 }
 
-export default MainList
+export default CovidTable
