@@ -1,3 +1,30 @@
-#mainlist {
-    
+:root {
+    --table-border-color: rgba(255, 255, 255, 0.308);
+}
+
+#data-table {
+    border-collapse: collapse;
+    font-size: .9em;
+    min-width: 400px;
+    width: 80%;
+}
+
+#data-table thead tr {
+    background-color: #2d2d33;
+    color: rgba(255, 255, 255, 0.699);
+    font-weight: bold;
+}
+
+#data-table th,
+#data-table td {
+     padding: 12px 15px;
+}
+
+#data-table tbody tr {
+    text-align: center;
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+#data-table tbody tr:nth-last-of-type(even) {
+     background-color: #36363f;
 }
