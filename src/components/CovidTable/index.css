@@ -6,7 +6,7 @@
     border-collapse: collapse;
     font-size: .9em;
     min-width: 400px;
-    width: 80%;
+    width: 100%;
 }
 
 #data-table thead tr {
