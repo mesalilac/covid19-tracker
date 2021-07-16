@@ -1,12 +1,12 @@
 import './App.css';
-import MainList from "./components/mainList/MainList"
+import CovidTable from "./components/CovidTable/CovidTable"
 import SideBar from './components/sidebar/sidebar';
 
 function App() {
   return (
     <div>
       <SideBar />
-      <MainList />
+      <CovidTable />
     </div>
   );
 }
