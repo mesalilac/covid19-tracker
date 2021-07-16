@@ -1,14 +1,12 @@
 import './App.css';
+import MainList from "./components/mainList/MainList"
+import SideBar from './components/sidebar/sidebar';
 
 function App() {
   return (
     <div id="app">
-      
-      {/* side bar */}
-      <div id="sidebar"></div>
-
-      {/* main list */}
-      <div id="main"></div>
+      <SideBar />
+      <MainList />
     </div>
   );
 }
