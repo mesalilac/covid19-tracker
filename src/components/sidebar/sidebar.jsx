@@ -1,23 +1,14 @@
 import "./index.css"
-import useFetch from "react-fetch-hook"
-import millify from "millify"
+import GlobalData from "./GlobalData/GlobalData"
 
-function SideBar() {
-  const {data} = useFetch("https://covid19.mathdro.id/api");
-  
-  const globalData = {
-    "confirmed": millify(data?.confirmed.value, {lowercase: true}),
-    "recovered": millify(data?.recovered.value, {lowercase: true}),
-    "deaths": millify(data?.deaths.value, {lowercase: true})
-  }
-  
+export default function SideBar() {
+
   return (
     <div id="sidebar">
       <div id="searchbar">
         <input type="text" placeholder="search"/>
       </div>
+      <GlobalData />
     </div>
   )
 }
-
-export default SideBar
