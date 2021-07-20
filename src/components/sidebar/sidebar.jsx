@@ -1,9 +1,9 @@
 import "./index.css"
-import API from "../../api"
-
-const api = new API()
+import useFetch from "react-fetch-hook"
 
 function SideBar() {
+  const {data} = useFetch("https://covid19.mathdro.id/api");
+  
   return (
     <div id="sidebar">
       <div id="searchbar">
