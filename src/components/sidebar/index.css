@@ -4,3 +4,18 @@
   background-color: #363640;
   float: left;
 }
+
+#searchbar {
+  margin-top: 20%;
+  text-align: center;
+}
+
+#searchbar input {
+  border: none;
+  width: 222px;
+  color: #3f87b8;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #303038;
+  outline: none;
+}
