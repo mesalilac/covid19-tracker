@@ -1,0 +1,79 @@
+#GlobalData {
+    margin: auto;
+    margin-top: 40%;
+    width: 60%;
+}
+
+#global-span {
+    width: 222px;
+    height: 108px;
+    background-color: #3E7FBB;
+}
+
+.global {
+    position: relative;
+    top: 10%;
+    left: 20%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    margin-left: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-span {
+    position: relative;
+    left: 20%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text-span-2 {
+    position: relative;
+    top: 25%;
+    left: -4%;
+    font-size: 16px;
+}
+
+.recovered-text-span {
+    position: relative;
+    top: 10%;
+    left: 20%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.recovered-text-span-2 {
+    position: relative;
+    top: 35%;
+    left: -20%;
+    font-size: 16px;
+}
+
+#cases {
+    margin-top: 20%;
+    width: 222px;
+    height: 108px;
+    background-color: #BA3939;
+}
+
+#recovered {
+    margin-top: 20%;
+    width: 222px;
+    height: 108px;
+    background-color: #37A650;
+}
+
+#deaths {
+    margin-top: 20%;
+    width: 222px;
+    height: 108px;
+    background-color: #838282;
+}
