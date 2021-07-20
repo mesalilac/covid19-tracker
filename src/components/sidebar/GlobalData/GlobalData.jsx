@@ -2,6 +2,11 @@ import "./index.css"
 import millify from "millify"
 import react from "react";
 
+import global from "../../../assets/global.png";
+import cases from "../../../assets/cases.png";
+import recovered from "../../../assets/recovered.png"
+import deaths from "../../../assets/deaths.png"
+
 export default class SideBar extends react.Component {
   state = {
     confirmed: 0,
@@ -21,10 +26,29 @@ export default class SideBar extends react.Component {
   }
 
   render() {
-    return <>
-    <p>{this.state.confirmed}</p>
-    <p>{this.state.recovered}</p>
-    <p>{this.state.deaths}</p>
-    </>
+    return <div id="GlobalData">
+      <div id="global-span">
+        <img src={global} className="icon" alt="global" />
+        <span className="global">Global</span>
+      </div>
+
+      <div id="cases">
+        <img src={cases} className="icon" alt="cases" />
+        <span className="text-span">Cases</span>
+        <span className="text-span-2">{this.state.confirmed}</span>
+      </div>
+
+      <div id="recovered">
+        <img src={recovered} style={{height: "35.25px"}} className="icon" alt="recovered" />
+        <span className="recovered-text-span">recovered</span>
+        <span className="recovered-text-span-2">{this.state.recovered}</span>
+      </div>
+
+      <div id="deaths">
+        <img src={deaths} className="icon" alt="deaths" />
+        <span className="text-span">deaths</span>
+        <span className="text-span-2">{this.state.deaths}</span>
+      </div>
+    </div>
   }
 }
