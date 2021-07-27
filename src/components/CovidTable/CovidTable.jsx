@@ -1,6 +1,7 @@
 import "./index.css"
 import react from "react"
 import millify from "millify"
+import LoadingOverlay from "react-loading-overlay"
 import TableScrollbar from 'react-table-scrollbar';
 
 export default class CovidTable extends react.Component {
@@ -66,21 +67,23 @@ export default class CovidTable extends react.Component {
       })
     }
 
-    return <TableScrollbar height="100vh">
-        <table id="data-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Country</th>
-              <th>Total Cases</th>
-              <th>Total Recovered</th>
-              <th>Total Deaths</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data}
-          </tbody>
-        </table>
-      </TableScrollbar>
+    return <LoadingOverlay active={this.state.loading} spinner text='Loading...'>
+      <TableScrollbar height="100vh">
+          <table id="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th id="Country-th">Country</th>
+                <th id="Cases-th">Total Cases</th>
+                <th id="Recovered-th">Total Recovered</th>
+                <th id="Deaths-th">Total Deaths</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data}
+            </tbody>
+          </table>
+        </TableScrollbar>
+      </LoadingOverlay>
   }
 }
