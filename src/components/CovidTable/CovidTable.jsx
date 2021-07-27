@@ -1,31 +1,86 @@
 import "./index.css"
+import react from "react"
+import millify from "millify"
 import TableScrollbar from 'react-table-scrollbar';
 
-function CovidTable() {
-  return (
-    <TableScrollbar height="100vh">
-      <table id="data-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Country</th>
-            <th>Total Cases</th>
-            <th>Total Recovered</th>
-            <th>Total Deaths</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Country</td>
-            <td>900</td>
-            <td>200</td>
-            <td>80</td>
-          </tr>
-        </tbody>
-      </table>
-    </TableScrollbar>
-  )
-}
+export default class CovidTable extends react.Component {
+  state = {
+    loading: true,
+    CountriesData: []
+  }
 
-export default CovidTable
+  async componentDidMount() {
+    const response = await fetch("https://covid19.mathdro.id/api/countries");
+    const data = await response.json();
+    var CountriesNames = []
+    let CountriesData = []
+    for (let i = 0; i < data.countries.length; i++)
+      CountriesNames.push(data.countries[i].name)
+
+    for (let i = 0; i < CountriesNames.length; i++) {
+      const response = await fetch(`https://covid19.mathdro.id/api/countries/${CountriesNames[i]}`);
+      const data = await response.json();
+      
+      let CountryName = CountriesNames[i]
+      let confirmed = data.confirmed === undefined ? 0 : millify(data.confirmed.value)
+      let recovered = data.recovered === undefined ? 0 : millify(data.recovered.value)
+      let deaths = data.deaths === undefined ? 0 : millify(data.deaths.value) 
+
+      CountriesData.push({
+        index: i+1,
+        name: CountryName,
+        confirmed: confirmed,
+        recovered: recovered,
+        deaths: deaths 
+      })
+
+      // if (i === 5) {
+      //   break
+      // }
+    }
+    this.setState({
+      loading: false,
+      CountriesData: CountriesData
+    })
+  }
+
+  render() {
+    let data
+    if (this.state.loading === true) {
+      data = <tr>
+          <td>1</td>
+          <td>loading</td>
+          <td>loading</td>
+          <td>loading</td>
+          <td>loading</td>
+        </tr>
+    } else {
+      data = this.state.CountriesData.map((data) => {
+        return <tr key={data.index}>
+          <td>{data.index}</td>
+          <td>{data.name}</td>
+          <td>{data.confirmed}</td>
+          <td>{data.recovered}</td>
+          <td>{data.deaths}</td>
+        </tr>
+      })
+    }
+
+    return <TableScrollbar height="100vh">
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Country</th>
+              <th>Total Cases</th>
+              <th>Total Recovered</th>
+              <th>Total Deaths</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data}
+          </tbody>
+        </table>
+      </TableScrollbar>
+  }
+}
