@@ -18,7 +18,7 @@
 
 #data-table th,
 #data-table td {
-     padding: 12px 15px;
+    padding: 12px 15px;
 }
 
 #data-table tbody tr {
@@ -27,5 +27,5 @@
 }
 
 #data-table tbody tr:nth-last-of-type(even) {
-     background-color: #36363f;
+    background-color: #36363f;
 }
