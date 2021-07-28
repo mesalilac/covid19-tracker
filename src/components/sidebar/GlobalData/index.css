@@ -77,3 +77,14 @@
     height: 108px;
     background-color: #838282;
 }
+
+@media screen and (max-width: 800px) {
+    #GlobalData {
+        /* width: 50%; */
+        /* height: 50%; */
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+    }
+}
