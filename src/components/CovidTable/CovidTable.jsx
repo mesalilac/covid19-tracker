@@ -36,9 +36,9 @@ export default class CovidTable extends react.Component {
         deaths: deaths 
       })
 
-      if (i === 5) {
-        break
-      }
+      // if (i === 5) {
+      //   break
+      // }
     }
     this.setState({
       loading: false,
