@@ -7,13 +7,14 @@ import TableScrollbar from 'react-table-scrollbar';
 export default class CovidTable extends react.Component {
   state = {
     loading: true,
-    CountriesData: []
+    CountriesData: [],
+    CountriesNames: []
   }
 
   async componentDidMount() {
     const response = await fetch("https://covid19.mathdro.id/api/countries");
     const data = await response.json();
-    var CountriesNames = []
+    let CountriesNames = []
     let CountriesData = []
     for (let i = 0; i < data.countries.length; i++)
       CountriesNames.push(data.countries[i].name)
@@ -35,13 +36,14 @@ export default class CovidTable extends react.Component {
         deaths: deaths 
       })
 
-      // if (i === 5) {
-      //   break
-      // }
+      if (i === 5) {
+        break
+      }
     }
     this.setState({
       loading: false,
-      CountriesData: CountriesData
+      CountriesData: CountriesData,
+      CountriesNames: CountriesNames
     })
   }
 
