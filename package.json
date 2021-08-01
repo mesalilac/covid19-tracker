@@ -1,11 +1,13 @@
 {
   "name": "covid19-tracker",
   "version": "0.1.0",
+  "homepage": "https://senpai-10.github.io/covid19-tracker",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "gh-pages": "^3.2.3",
     "millify": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,6 +18,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
