@@ -1,2 +1,1 @@
-#covid19 tracker 
-made in reactjs
+#covid19 tracker made in reactjs
